@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://tomorrownevercodes.github.io/sitemap.xml
