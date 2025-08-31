@@ -1,0 +1,13 @@
+.socials {
+  margin-top: 10px;
+}
+
+.socials li {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #6495ed;
+}

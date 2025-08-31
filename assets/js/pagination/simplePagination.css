@@ -1,0 +1,61 @@
+/* Wrapper for pagination */
+.simple-pagination {
+  display: flex; /* use flexbox for easy centering */
+  justify-content: center; /* center horizontally */
+  flex-wrap: wrap; /* wrap to next line if needed */
+  padding: 0 5px 5px 0;
+  margin: 2em 0; /* vertical spacing from content */
+  list-style: none;
+  overflow: hidden;
+}
+
+/* The UL inside the wrapper */
+.simple-pagination ul {
+  display: flex; /* make <li> horizontal */
+  gap: 0.5em; /* spacing between boxes */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Each page box */
+.simple-pagination li {
+  list-style: none;
+  padding: 0.5em 0.8em;
+  margin: 0;
+  float: none; /* remove old float */
+  border: 1px solid cornflowerblue;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+}
+
+/* Optional: style links inside each li */
+.simple-pagination li a {
+  text-decoration: none;
+  color: cornflowerblue;
+  display: block;
+  width: 100%;
+}
+
+/* Highlight current page */
+.simple-pagination li.active a {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+/* Cursor for ellipsis inputs */
+span.ellipse.clickable {
+  cursor: pointer;
+}
+
+/* Width for page number input if using ellipsis */
+.ellipse input {
+  width: 3em;
+  text-align: center;
+}
+.simple-pagination li:not(.active):not(.disabled):hover {
+  background-color: #005fa3;
+  color: white;
+  cursor: pointer;
+}

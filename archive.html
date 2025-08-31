@@ -1,0 +1,56 @@
+---
+title: Archive | Tomorrow Never Codes
+layout: default
+heading: Archive
+stylesheets: [assets/css/archive.css, assets/js/pagination/simplePagination.css]
+---
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script
+  type="text/javascript"
+  src="assets/js/pagination/jquery.simplePagination.js"
+></script>
+
+<script>
+  document.documentElement.className =
+    document.documentElement.className.replace("no-js", "js");
+</script>
+<ul class="archive-list">
+  {% for post in site.posts %}
+  <li class="archive-item">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.excerpt }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<div id="pagination-container"></div>
+<script>
+  $(function () {
+    var items = $(".archive-list li");
+    var numItems = items.length;
+    var perPage = 5;
+
+    // Hide all items except the first page
+    items.slice(perPage).hide();
+
+    // Initialize pagination
+    $("#pagination-container").pagination({
+      items: numItems,
+      itemsOnPage: perPage,
+      onPageClick: function (pageNumber) {
+        var start = (pageNumber - 1) * perPage;
+        var end = start + perPage;
+        items.hide().slice(start, end).show();
+      },
+    });
+
+    // Make the entire <li> clickable
+    $("#pagination-container").on("click", "li:not(.active)", function () {
+      var link = $(this).find("a");
+      if (link.length) {
+        link[0].click(); // trigger the link click
+      }
+    });
+  });
+</script>

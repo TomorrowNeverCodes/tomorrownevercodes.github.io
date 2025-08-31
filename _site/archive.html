@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/images/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/default.css"
+    />
+
+     
+    <link rel="stylesheet" href="/assets/css/archive.css" />
+    
+    <link rel="stylesheet" href="/assets/js/pagination/simplePagination.css" />
+     
+    <title>Archive | Tomorrow Never Codes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="site-heading">
+        <h1 class="title">Tomorrow Never Codes</h1>
+        <hr />
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>
+            <a href="">Latest Post</a>
+          </li>
+          <li><a href="/archive.html">Archive</a></li>
+          <li>
+            <a href="/reading-list.html">Reading List</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="card">
+        <div class="card-content">
+          <h2 class="card-heading">Archive</h2>
+          <hr />
+          <br />
+          <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script
+  type="text/javascript"
+  src="assets/js/pagination/jquery.simplePagination.js"
+></script>
+
+<script>
+  document.documentElement.className =
+    document.documentElement.className.replace("no-js", "js");
+</script>
+<ul class="archive-list">
+  
+</ul>
+
+<div id="pagination-container"></div>
+<script>
+  $(function () {
+    var items = $(".archive-list li");
+    var numItems = items.length;
+    var perPage = 5;
+
+    // Hide all items except the first page
+    items.slice(perPage).hide();
+
+    // Initialize pagination
+    $("#pagination-container").pagination({
+      items: numItems,
+      itemsOnPage: perPage,
+      onPageClick: function (pageNumber) {
+        var start = (pageNumber - 1) * perPage;
+        var end = start + perPage;
+        items.hide().slice(start, end).show();
+      },
+    });
+
+    // Make the entire <li> clickable
+    $("#pagination-container").on("click", "li:not(.active)", function () {
+      var link = $(this).find("a");
+      if (link.length) {
+        link[0].click(); // trigger the link click
+      }
+    });
+  });
+</script>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

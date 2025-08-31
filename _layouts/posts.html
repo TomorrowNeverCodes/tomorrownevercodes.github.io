@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ '/assets/images/favicon.ico' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/default.css' | relative_url }}"
+    />
+
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="site-heading">
+        <h1 class="title">Tomorrow Never Codes</h1>
+        <hr />
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>
+            <a href="{{ site.posts.first.url | relative_url }}">Latest Post</a>
+          </li>
+          <li><a href="{{ '/archive.html' | relative_url }}">Archive</a></li>
+          <li>
+            <a href="{{ '/reading-list.html' | relative_url }}">Reading List</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="card">
+        <div class="card-content">
+          <h2 class="card-heading">{{ page.heading }}</h2>
+          <hr />
+          <br />
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

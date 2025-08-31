@@ -1,0 +1,11 @@
+collections:
+  readinglist:
+    output: true
+    permalink: /readinglist/:name/
+
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "default"
