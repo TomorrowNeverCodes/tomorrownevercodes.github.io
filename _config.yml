@@ -8,4 +8,4 @@ defaults:
       path: "_posts"
       type: "posts"
     values:
-      layout: "default"
+      layout: "posts"

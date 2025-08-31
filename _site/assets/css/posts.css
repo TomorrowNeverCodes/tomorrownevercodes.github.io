@@ -1,0 +1,118 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: cornflowerblue;
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+hr {
+  color: #6495ed;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 1.7em;
+  color: #e0e0e0;
+}
+
+blockquote {
+  background: grey;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #e0e0e0;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+  color: #e0e0e0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Ledger";
+  src: url(../fonts/Ledger-Regular.ttf);
+}
+
+body {
+  background-color: #222129;
+}
+
+.container {
+  width: 50vw;
+  margin: 100px auto;
+}
+
+.site-heading .title {
+  text-align: center;
+  font-family: "Ledger";
+  color: #6495ed;
+  margin-top: 20px; /* same as your h2 rule */
+  margin-bottom: 5px; /* reduce the gap below the title */
+}
+.site-heading hr {
+  color: #6495ed;
+}
+
+/*navbar*/
+
+.navbar ul {
+  display: flex;
+  margin: 10px 0;
+}
+
+.navbar ul li {
+  list-style: none;
+  margin-right: 10px;
+  font-family: "Ledger";
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #6495ed;
+}
+
+.navbar ul li a:hover {
+  border-bottom: #6495ed 1px solid;
+}
+
+/* card */
+
+.card {
+  border: 1px solid #6495ed;
+}
+
+.card .card-content {
+  margin: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #6495ed;
+}
